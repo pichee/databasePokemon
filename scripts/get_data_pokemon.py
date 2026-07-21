@@ -5,7 +5,7 @@ import os
 import json
 import time
 
-df = pd.read_csv("../data/cleaned/pokemon_names.csv")
+df = pd.read_csv("../data/cleaned/name_pokemon.csv")
 x = df['id'].max()
 
 lista_json = []
