@@ -26,7 +26,7 @@ for index, move_info in enumerate(moves_list, 1):
     except Exception as e:
         print(f"erro na requisição de '{move_info['name']}': {e}")
 
-# 3. Salva todos no arquivo JSON
+
 caminho_arquivo = "../data/raw/move_pokemon.json"
 with open(caminho_arquivo, 'w', encoding='utf-8') as arquivo:
     json.dump(lista_json, fp=arquivo, indent=4, ensure_ascii=False)

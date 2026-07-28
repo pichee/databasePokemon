@@ -10,14 +10,23 @@ x = df['id'].max()
 
 lista_json = []
 
-for i in range(1,x+1): 
+for i in range(1, x + 1):
     url = f"https://pokeapi.co/api/v2/pokemon/{i}"
 
-    body = requests.get(url=url)
+    try:
+        body = requests.get(url=url)
 
-    if body.status_code == 200:
+        if body.status_code == 200:
+            lista_json.append(body.json())
+            print(f"[{i}/{x}] Pokémon ID {i} baixado com sucesso.")
+        else:
+            print(
+                f"[{i}/{x}] Falha no ID {i}. Status code: {body.status_code}"
+            )
 
-        lista_json.append(body.json())
+    except requests.RequestException as e:
+        print(f"[{i}/{x}] Erro de conexão no ID {i}: {e}")
+
     time.sleep(0.25)
 
         

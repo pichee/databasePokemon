@@ -122,4 +122,4 @@ df = df[[
     'gif_front_default', 'gif_front_female', 'gif_front_shiny', 'gif_front_shiny_female'
 ]].sort_values(by='id')
 
-df.to_csv("../data/cleaned/data_pokemon.csv")
+df.to_csv("../data/processed/data_pokemon.csv")

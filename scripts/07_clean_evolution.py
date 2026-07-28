@@ -97,5 +97,5 @@ df = df[
     ]
 ].sort_values(by=["chain_id", "de_id"])
 
-df.to_csv("../data/cleaned/evolucoes.csv", index=False)
+df.to_csv("../data/processed/evolucoes.csv", index=False)
 
